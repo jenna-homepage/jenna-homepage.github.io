@@ -1,5 +1,7 @@
+import MainWrapper from "./components/MainWrapper";
+
 function App() {
-  return <div>App</div>;
+  return <MainWrapper />;
 }
 
 export default App;
