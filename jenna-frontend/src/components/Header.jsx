@@ -1,12 +1,34 @@
 import React from "react";
 import styled from "styled-components";
 
+const headerData = [
+  {
+    text: "About Me",
+    navTo: "",
+  },
+  {
+    text: "Testimonials",
+    navTo: "",
+  },
+  {
+    text: "Listings",
+    navTo: "",
+  },
+  {
+    text: "EXP Realty",
+    navTo: "",
+  },
+];
+
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   background-color: #515151;
   color: #ffff;
   padding: 10px 20px;
+  @media (max-width: 720px) {
+    flex-direction: column;
+  }
 `;
 const LeftHeaderContainer = styled.div`
   display: flex;
@@ -36,6 +58,7 @@ const IconContainer = styled.div`
 const NameContainer = styled.div`
   font-size: 1.2rem;
   font-weight: bold;
+  padding: 0.5em 1em;
   @media (max-width: 1080px) {
     font-size: 1em;
   }
@@ -54,7 +77,35 @@ const RightLinkContainer = styled.div`
   }
 `;
 
+const ButtonWrapper = styled.span``;
+const StyledButton = styled.button`
+  background: none;
+  border: none;
+  color: #ffff;
+  padding: 0.5em 1em;
+  cursor: pointer;
+`;
+
 const Header = () => {
+  const _renderButtons = () => {
+    return (
+      headerData &&
+      headerData.map((buttonData) => {
+        const { text, navTo } = buttonData;
+        return (
+          <ButtonWrapper key={"headerButton" + text.replace(/ /g, "")}>
+            <StyledButton
+              type={"button"}
+              onClick={() => console.log("clicked")}
+            >
+              {" "}
+              {text}{" "}
+            </StyledButton>
+          </ButtonWrapper>
+        );
+      })
+    );
+  };
   return (
     <HeaderContainer>
       <LeftHeaderContainer>
@@ -62,10 +113,7 @@ const Header = () => {
       </LeftHeaderContainer>
       <RightHeaderContainer>
         <RightLinkContainer>
-          <span> About Me </span>
-          <span> Testimonials </span>
-          <span> Listings </span>
-          <span> EXP Realty </span>
+          {headerData && _renderButtons()}
         </RightLinkContainer>
       </RightHeaderContainer>
     </HeaderContainer>
