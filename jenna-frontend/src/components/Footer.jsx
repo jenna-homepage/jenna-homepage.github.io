@@ -12,6 +12,7 @@ const LayoutWrapper = styled.div`
   bottom: 0;
   width: inherit;
   min-width: 360px;
+  max-width: 1400px;
 `;
 
 const StyledLine = styled.div`
@@ -37,6 +38,12 @@ const TextContainer = styled.div`
   }
 `;
 
+const InfoBox = styled.div`
+  font-size: 0.5rem;
+  text-align: left;
+  padding: 0em 0.5em;
+`;
+
 const StyledSVG = styled.svg`
   viewbox: 0 0 24 24;
   fill: currentColor;
@@ -57,6 +64,14 @@ const CopyText = styled.span`
 const Footer = () => {
   return (
     <LayoutWrapper>
+      <TextContainer>
+        <InfoBox>
+          <div>EMAIL: jenna@patmckennarealtors.com</div>
+          <div>MOBILE: (267) 752-6563</div>
+          <div>ADDRESS: 63 E Main St, Evesham, NJ 08053</div>
+          <div>LICENSE #: 2322201</div>
+        </InfoBox>
+      </TextContainer>
       <TextContainer>
         <a href="mailto:xxx@gmail.com ">Email</a>
       </TextContainer>
