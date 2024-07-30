@@ -10,16 +10,25 @@ const BioContainer = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 10px 20px;
-  @media (max-width: 720px) {
+  @media (max-width: 1080px) {
     flex-direction: column-reverse;
   }
 `;
 
 const TextContainer = styled.div``;
 const ImageContainer = styled.div`
-  padding: 3em;
-  min-width: 300px;
-  min-height: 300px;
+  padding: 2em 0em 2em 2em;
+  min-width: 40%;
+
+  @media (max-width: 1080px) {
+    min-width: auto;
+    padding: 1em;
+  }
+`;
+
+const ProfileImage = styled.img`
+  width: 100%;
+  height: auto;
 `;
 
 const Bio = () => {
@@ -44,7 +53,12 @@ const Bio = () => {
           smooth and stress-free as possible.
         </StyledParagraph>
       </TextContainer>
-      <ImageContainer>ImageContainer</ImageContainer>
+      <ImageContainer>
+        <ProfileImage
+          src="./jenna-profile-large.webp"
+          alt="Jenna Merrill Profile Picture"
+        />
+      </ImageContainer>
     </BioContainer>
   );
 };

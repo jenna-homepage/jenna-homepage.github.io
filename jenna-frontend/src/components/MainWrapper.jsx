@@ -30,8 +30,9 @@ const ContentContainer = styled.div`
   z-index: 1;
   margin-left: auto;
   margin-right: auto;
-  height: 100%;
+  min-height: 1280px;
   width: 80vw;
+  max-width: 1400px;
   min-width: 360px;
   background-color: #e2e8f7;
 `;
