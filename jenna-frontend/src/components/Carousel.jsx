@@ -67,6 +67,7 @@ const RightButton = styled(NavButton)`
 `;
 
 // const Carousel = ({ cardsArr }) => {
+// not rendering correctly
 const Carousel = () => {
   const cardsArr = [
     { title: "Card one" },
