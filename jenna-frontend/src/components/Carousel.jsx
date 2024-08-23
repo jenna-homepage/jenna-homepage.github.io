@@ -6,8 +6,9 @@ const CarouselContainer = styled.div`
   flex-direction: column;
   overflow: hidden;
   width: 100%;
-  max-width: 1000px; // Adjust based on your design
+  max-width: 1000px;
   margin: auto;
+  min-height: 10vh;
 
   @media (min-width: 720px) {
     flex-direction: row;
@@ -40,9 +41,8 @@ const Card = styled.div`
 `;
 
 const NavButton = styled.button`
-  position: absolute;
+  position: relative;
   top: 50%;
-  transform: translateY(-50%);
   background: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
@@ -67,7 +67,6 @@ const RightButton = styled(NavButton)`
 `;
 
 // const Carousel = ({ cardsArr }) => {
-// not rendering correctly
 const Carousel = () => {
   const cardsArr = [
     { title: "Card one" },
