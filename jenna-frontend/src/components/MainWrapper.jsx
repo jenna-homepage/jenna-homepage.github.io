@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Header from "./Header";
 import Bio from "./Bio";
 import Footer from "./Footer";
-import Carousel from "./Carousel";
 // import ReactGA from "react-ga4";
 
 // using https://www.npmjs.com/package/react-ga4
@@ -65,7 +64,6 @@ const MainWrapper = () => {
           <Bio />
         </BodyWrapper>
         <StyledLine />
-        <Carousel />
         <Footer />
       </ContentContainer>
     </MainContainer>
