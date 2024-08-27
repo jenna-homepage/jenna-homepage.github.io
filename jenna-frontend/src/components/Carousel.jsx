@@ -68,7 +68,16 @@ const Carousel = () => {
   const goToSlide = (slideIndex) => {
     setCurrentIndex(slideIndex);
   };
-  return <div>carousel</div>;
+
+  const _renderCards = () => {
+    return (
+      slides &&
+      slides.map((_, index) => {
+        return <Card key={`Card-${index}`}>{`Card-${index}`}</Card>;
+      })
+    );
+  };
+  return <Container>{slides && _renderCards()}</Container>;
 };
 
 export default Carousel;

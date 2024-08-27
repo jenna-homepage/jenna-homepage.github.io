@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import Header from "./Header";
 import Bio from "./Bio";
+import Carousel from "./Carousel";
 import Footer from "./Footer";
 // import ReactGA from "react-ga4";
 
@@ -64,6 +65,7 @@ const MainWrapper = () => {
           <Bio />
         </BodyWrapper>
         <StyledLine />
+        <Carousel />
         <Footer />
       </ContentContainer>
     </MainContainer>
