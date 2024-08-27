@@ -7,7 +7,7 @@ const Container = styled.div`
   transition: transform ease-out 0.3s;
 `;
 
-const ContainerOverflow = styled.div`
+const CardsContainer = styled.div`
   overflow: hidden;
   height: 100%;
 `;
@@ -19,6 +19,13 @@ const Card = styled.div`
   backgroundsize: cover;
   backgroundposition: center;
 `;
+
+const PaginationContainer = styled.div`
+display: "flex",
+  justifyContent: "center",`;
+const DotWrapper = styled.div` margin: "0 3px",
+  cursor: "pointer",
+  fontSize: "20px",`;
 
 const RightArrow = styled.div`
   position: absolute;
@@ -77,7 +84,25 @@ const Carousel = () => {
       })
     );
   };
-  return <Container>{slides && _renderCards()}</Container>;
+
+  const _renderPagination = () => {
+    return (
+      slides &&
+      slides.map((_, index) => {
+        return <DotWrapper key={`PaginationDot-${index}`}>●</DotWrapper>;
+      })
+    );
+  };
+  return (
+    <Container>
+      <div>
+        <LeftArrow>❰</LeftArrow>
+        <RightArrow>❱</RightArrow>
+      </div>
+      <CardsContainer>{slides && _renderCards()}</CardsContainer>
+      <PaginationContainer>{slides && _renderPagination()}</PaginationContainer>
+    </Container>
+  );
 };
 
 export default Carousel;
