@@ -4,34 +4,50 @@ import styled from "styled-components";
 const Container = styled.div`
   min-height: 3vh;
   padding: 1em;
+  overflow: hidden;
 `;
 
 const CardsContainer = styled.div`
   display: flex;
-  gap: 1em;
-  overflow: hidden;
+  gap: 3em;
   transition: transform ease-out 0.3s;
+  @media (min-width: 721px) {
+    ${({ $totalSlides }) => `width: ${$totalSlides * 60}vw;`}
+    ${({ $currentIndex }) => `transform: translateX(-${$currentIndex * 60}vw);`}
+  }
   @media (max-width: 720px) {
+    gap: 1em;
     flex-direction: column;
     align-items: center;
   }
 `;
+// ${({ $currentIndex }) => `transform: -${$currentIndex * 60}vw';`}
+// width: 300vw;
 
 const Card = styled.div`
   color: white;
-  width: 400px;
+  width: 80vw;
   height: 300px;
   border-radius: 10px;
   background-size: cover;
   background-position: center;
   background-color: black;
+  ${({ $image }) => `background-image: url(${$image});`}
+  @media (max-width: 1080px) {
+  }
+  @media (max-width: 720px) {
+    width: 75vw;
+    height: 250px;
+  }
 `;
-// ${({ $image }) => `background-image: url(${$image});`}
 
 const PaginationContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  @media (max-width: 720px) {
+    visibility: hidden;
+  }
 `;
 
 const DotContainer = styled.div`
@@ -158,15 +174,13 @@ const Carousel = () => {
   };
   return (
     <Container>
-      <CardsContainer>{slides && _renderCards()}</CardsContainer>
+      <CardsContainer $totalSlides={slides.length} $currentIndex={currentIndex}>
+        {slides && _renderCards()}
+      </CardsContainer>
       <PaginationContainer>
-        <LeftArrow onClick={() => console.log("clicked on left arrow")}>
-          ❰
-        </LeftArrow>
+        <LeftArrow onClick={() => goToPrevious()}>❰</LeftArrow>
         <DotContainer>{slides && _renderPagination()}</DotContainer>
-        <RightArrow onClick={() => console.log("clicked on right arrow")}>
-          ❱
-        </RightArrow>
+        <RightArrow onClick={() => goToNext()}>❱</RightArrow>
       </PaginationContainer>
     </Container>
   );
