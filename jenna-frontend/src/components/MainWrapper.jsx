@@ -31,7 +31,6 @@ const ContentContainer = styled.div`
   z-index: 1;
   margin-left: auto;
   margin-right: auto;
-  min-height: 1280px;
   width: 80vw;
   max-width: 1400px;
   min-width: 360px;

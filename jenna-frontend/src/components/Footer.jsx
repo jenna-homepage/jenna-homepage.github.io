@@ -8,7 +8,6 @@ const LayoutWrapper = styled.div`
   background-color: #515151;
   color: #ffffff;
   padding: 10px 0;
-  position: fixed;
   bottom: 0;
   width: inherit;
   min-width: 360px;

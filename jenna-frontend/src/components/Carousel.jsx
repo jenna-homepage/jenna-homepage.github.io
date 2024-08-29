@@ -11,6 +11,10 @@ const CardsContainer = styled.div`
   gap: 1em;
   overflow: hidden;
   transition: transform ease-out 0.3s;
+  @media (max-width: 720px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const Card = styled.div`
