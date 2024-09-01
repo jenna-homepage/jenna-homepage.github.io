@@ -15,6 +15,10 @@ const CardsContainer = styled.div`
     ${({ $totalSlides }) => `width: ${$totalSlides * 60}vw;`}
     ${({ $currentIndex }) => `transform: translateX(-${$currentIndex * 60}vw);`}
   }
+  @media (min-width: 1080px) {
+    ${({ $totalSlides }) => `width: ${$totalSlides * 50}vw;`}
+    ${({ $currentIndex }) => `transform: translateX(-${$currentIndex * 50}vw);`}
+  }
   @media (max-width: 720px) {
     gap: 1em;
     flex-direction: column;
@@ -25,20 +29,30 @@ const CardsContainer = styled.div`
 // width: 300vw;
 
 const Card = styled.div`
-  color: white;
+  color: black;
   width: 80vw;
   height: 300px;
   border-radius: 10px;
   background-size: cover;
   background-position: center;
-  background-color: black;
+  background-color: grey;
   ${({ $image }) => `background-image: url(${$image});`}
-  @media (max-width: 1080px) {
+  @media (min-width: 1080px) {
+    width: 50vw;
   }
   @media (max-width: 720px) {
     width: 75vw;
     height: 250px;
   }
+`;
+
+const TextContainer = styled.div`
+  margin: 1em;
+`;
+const CardTitle = styled.h4`
+  display: block;
+  font-size: 1.5em;
+  font-weight: bold;
 `;
 
 const PaginationContainer = styled.div`
@@ -149,7 +163,11 @@ const Carousel = () => {
             onClick={() => console.log("clicked on card", index)}
             key={`Card-${index}`}
             $image={url}
-          >{`Card-${index}`}</Card>
+          >
+            <TextContainer>
+              <CardTitle>{`Card-${index}: ${title}`}</CardTitle>
+            </TextContainer>
+          </Card>
         );
       })
     );
