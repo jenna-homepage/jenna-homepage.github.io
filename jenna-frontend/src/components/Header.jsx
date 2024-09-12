@@ -4,19 +4,19 @@ import styled from "styled-components";
 const headerData = [
   {
     text: "About Me",
-    navTo: "",
+    navTo: "ABOUTME",
   },
-  {
-    text: "Testimonials",
-    navTo: "",
-  },
+  // {
+  //   text: "Testimonials",
+  //   navTo: "",
+  // },
   {
     text: "Listings",
-    navTo: "",
+    navTo: "LISTINGS",
   },
   {
     text: "EXP Realty",
-    navTo: "",
+    navTo: "EXPREALTY",
   },
 ];
 
@@ -91,7 +91,8 @@ const StyledButton = styled.button`
   }
 `;
 
-const Header = () => {
+const Header = (props) => {
+  const { updateView } = props;
   const _renderButtons = () => {
     return (
       headerData &&
@@ -99,10 +100,7 @@ const Header = () => {
         const { text, navTo } = buttonData;
         return (
           <ButtonWrapper key={"headerButton" + text.replace(/ /g, "")}>
-            <StyledButton
-              type={"button"}
-              onClick={() => console.log("clicked")}
-            >
+            <StyledButton type={"button"} onClick={() => updateView(navTo)}>
               {" "}
               {text}{" "}
             </StyledButton>

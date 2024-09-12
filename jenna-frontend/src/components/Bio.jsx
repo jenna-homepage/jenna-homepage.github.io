@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import {
   SectionTitle,
+  SectionSubHeading,
   StyledParagraph,
   StyledHR,
 } from "../utilities/styledfonts";
@@ -29,6 +30,7 @@ const ImageContainer = styled.div`
 const ProfileImage = styled.img`
   width: 100%;
   height: auto;
+  border-radius: 10px;
 `;
 
 const Bio = () => {
@@ -36,7 +38,9 @@ const Bio = () => {
     <BioContainer>
       <TextContainer>
         <SectionTitle>About Jenna</SectionTitle>
-        <div>Real estate agent with EXP Realty, LLC</div>
+        <SectionSubHeading>
+          Real estate agent with EXP Realty, LLC
+        </SectionSubHeading>
         <StyledHR />
         <StyledParagraph>
           Having lived and worked in Beijing, Philadelphia, and now settled in

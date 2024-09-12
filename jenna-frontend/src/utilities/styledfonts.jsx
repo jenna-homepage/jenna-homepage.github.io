@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const SectionTitle = styled.div`
   color: #636363;
-  font-size: 1.8em;
+  font-size: 1.9em;
   font-weight: 600;
   padding-top: 1em;
   @media (max-width: 720px) {
@@ -17,13 +17,15 @@ const StyledParagraph = styled.p`
 `;
 
 const SectionHeading = styled.span`
-  font-size: 1.3em;
-  font-weight: 700;
+  display: block;
+  font-size: 1.8em;
+  font-weight: bold;
+  padding: 0.5em 0;
 `;
 
 const SectionSubHeading = styled.span`
   color: #636363;
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: 700;
 `;
 

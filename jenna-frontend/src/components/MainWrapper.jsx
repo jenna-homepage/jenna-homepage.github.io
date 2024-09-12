@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Header from "./Header";
 import Bio from "./Bio";
@@ -48,17 +48,19 @@ const BodyWrapper = styled.div`
 const StyledLine = styled.div`
   width: 100%;
   height: 2px;
-  background-color: #f1f0f0;
+  background-color: #cfcfcf;
   margin: 0 auto;
 `;
 
 const MainWrapper = () => {
+  const [currentView, setCurrentView] = useState("ABOUTME");
+  console.log("currentView", currentView);
   return (
     <MainContainer>
       <BackgroundLayer />
 
       <ContentContainer>
-        <Header />
+        <Header updateView={setCurrentView} />
         <StyledLine />
         <BodyWrapper>
           <Bio />

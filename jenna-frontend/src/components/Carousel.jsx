@@ -1,10 +1,12 @@
 import React, { useRef, useState, useEffect, useCallback } from "react";
+import { SectionHeading } from "../utilities/styledfonts";
 import styled from "styled-components";
 
 const Container = styled.div`
   min-height: 3vh;
-  padding: 1em;
+  padding: 1vh 5vw 4vh 4vw;
   overflow: hidden;
+  background: rgb(0 0 0 / 3%);
 `;
 
 const CardsContainer = styled.div`
@@ -109,10 +111,8 @@ const LeftArrow = styled.div`
   }
 `;
 
-const SectionTitle = styled.h3`
-  display: block;
-  font-size: 1.8em;
-  font-weight: bold;
+const BodyText = styled.p`
+  ${({ $darkmode }) => $darkmode && `color: white;`}
 `;
 
 const Carousel = () => {
@@ -120,31 +120,41 @@ const Carousel = () => {
   const parentWidth = 500;
   const slides = [
     {
-      // url: "./image-1.jpg",
+      url: "./image-1.jpg",
       title: "Testimonial 1",
       altText: "Testimonial 1",
+      bodyText:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     },
     {
-      url: "./image-2.jpg",
+      // url: "./image-2.jpg",
       title: "Testimonial 2",
       altText: "Testimonial 2",
+      bodyText:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     },
     {
       url: "./image-3.jpg",
       title: "Testimonial 3",
       altText: "Testimonial 3",
+      bodyText:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
       darkmode: true,
     },
     {
       url: "./image-4.jpg",
       title: "Testimonial 4",
       altText: "Testimonial 4",
+      bodyText:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
       darkmode: true,
     },
     {
       // url: "./image-5.jpg",
       title: "Testimonial 5",
       altText: "Testimonial 5",
+      bodyText:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
       darkmode: true,
     },
   ];
@@ -181,7 +191,7 @@ const Carousel = () => {
     return (
       slides &&
       slides.map((slide, index) => {
-        const { title, url, darkmode } = slide;
+        const { title, url, darkmode, bodyText } = slide;
         return (
           <Card
             onClick={() => console.log("clicked on card", index)}
@@ -190,6 +200,7 @@ const Carousel = () => {
           >
             <TextContainer>
               <CardTitle $darkmode={darkmode}>{`${title}`}</CardTitle>
+              <BodyText $darkmode={darkmode}>{bodyText}</BodyText>
             </TextContainer>
           </Card>
         );
@@ -216,7 +227,7 @@ const Carousel = () => {
   };
   return (
     <Container>
-      <SectionTitle>Testimonials</SectionTitle>
+      <SectionHeading>Testimonials</SectionHeading>
 
       <CardsContainer $totalSlides={slides.length} $currentIndex={currentIndex}>
         {slides && _renderCards()}
