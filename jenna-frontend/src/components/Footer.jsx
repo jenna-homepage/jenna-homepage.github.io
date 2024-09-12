@@ -1,5 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import {
+  SectionTitle,
+  SectionSubHeading,
+  StyledParagraph,
+  StyledHR,
+} from "../utilities/styledfonts";
 
 const LayoutWrapper = styled.div`
   display: flex;

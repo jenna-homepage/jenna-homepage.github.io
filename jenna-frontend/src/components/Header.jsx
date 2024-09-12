@@ -83,8 +83,11 @@ const StyledButton = styled.button`
   background: none;
   border: none;
   color: #ffff;
+  ${({ $activeView, $currentButton }) =>
+    $activeView === $currentButton && `color: darkgray;`}
   padding: 0.5em 1em;
   cursor: pointer;
+
   &:hover,
   &:focus {
     color: darkgray;
@@ -92,7 +95,7 @@ const StyledButton = styled.button`
 `;
 
 const Header = (props) => {
-  const { updateView } = props;
+  const { updateView, currentView } = props;
   const _renderButtons = () => {
     return (
       headerData &&
@@ -100,7 +103,12 @@ const Header = (props) => {
         const { text, navTo } = buttonData;
         return (
           <ButtonWrapper key={"headerButton" + text.replace(/ /g, "")}>
-            <StyledButton type={"button"} onClick={() => updateView(navTo)}>
+            <StyledButton
+              $activeView={currentView}
+              $currentButton={navTo}
+              type={"button"}
+              onClick={() => updateView(navTo)}
+            >
               {" "}
               {text}{" "}
             </StyledButton>

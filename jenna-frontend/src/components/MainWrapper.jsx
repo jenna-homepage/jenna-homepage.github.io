@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Header from "./Header";
 import Bio from "./Bio";
+import Listings from "./Listings";
+import Exp from "./Exp";
 import Carousel from "./Carousel";
 import Footer from "./Footer";
 // import ReactGA from "react-ga4";
@@ -55,15 +57,29 @@ const StyledLine = styled.div`
 const MainWrapper = () => {
   const [currentView, setCurrentView] = useState("ABOUTME");
   console.log("currentView", currentView);
+
+  const _renderView = () => {
+    switch (currentView) {
+      case "LISTINGS":
+        return <Listings />;
+        break;
+      case "EXPREALTY":
+        return <Exp />;
+        break;
+      default:
+        return <Bio />;
+    }
+  };
   return (
     <MainContainer>
       <BackgroundLayer />
 
       <ContentContainer>
-        <Header updateView={setCurrentView} />
+        <Header currentView={currentView} updateView={setCurrentView} />
         <StyledLine />
         <BodyWrapper>
-          <Bio />
+          {/* <Bio /> */}
+          {_renderView()}
         </BodyWrapper>
         <StyledLine />
 

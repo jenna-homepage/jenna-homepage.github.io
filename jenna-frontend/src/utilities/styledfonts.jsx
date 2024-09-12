@@ -17,10 +17,8 @@ const StyledParagraph = styled.p`
 `;
 
 const SectionHeading = styled.span`
-  display: block;
-  font-size: 1.8em;
-  font-weight: bold;
-  padding: 0.5em 0;
+  font-size: 1.3em;
+  font-weight: 700;
 `;
 
 const SectionSubHeading = styled.span`
