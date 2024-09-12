@@ -69,6 +69,7 @@ const NameContainer = styled.div`
 
 const RightLinkContainer = styled.div`
   margin-right: 20px;
+
   @media (max-width: 1080px) {
     font-size: 0.8em;
   }
@@ -84,6 +85,10 @@ const StyledButton = styled.button`
   color: #ffff;
   padding: 0.5em 1em;
   cursor: pointer;
+  &:hover,
+  &:focus {
+    color: darkgray;
+  }
 `;
 
 const Header = () => {

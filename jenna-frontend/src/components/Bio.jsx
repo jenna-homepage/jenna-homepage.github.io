@@ -36,7 +36,7 @@ const Bio = () => {
     <BioContainer>
       <TextContainer>
         <SectionTitle>About Jenna</SectionTitle>
-        <div>styled subtitle: Real estate agent with EXP Realty, LLC</div>
+        <div>Real estate agent with EXP Realty, LLC</div>
         <StyledHR />
         <StyledParagraph>
           Having lived and worked in Beijing, Philadelphia, and now settled in
