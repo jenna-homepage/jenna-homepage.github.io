@@ -64,6 +64,7 @@ const MainWrapper = () => {
           <Bio />
         </BodyWrapper>
         <StyledLine />
+
         <Carousel />
         <Footer />
       </ContentContainer>

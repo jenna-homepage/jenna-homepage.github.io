@@ -36,7 +36,7 @@ const Card = styled.div`
   background-size: cover;
   background-position: center;
   background-color: grey;
-  ${({ $image }) => `background-image: url(${$image});`}
+  ${({ $image }) => $image && `background-image: url(${$image});`}
   @media (min-width: 1080px) {
     width: 50vw;
   }
@@ -53,6 +53,7 @@ const CardTitle = styled.h4`
   display: block;
   font-size: 1.5em;
   font-weight: bold;
+  ${({ $darkmode }) => $darkmode && `color: white;`}
 `;
 
 const PaginationContainer = styled.div`
@@ -74,6 +75,12 @@ const DotWrapper = styled.div`
   top: 20%;
   cursor: pointer;
   font-size: 30px;
+  &:hover,
+  &:focus {
+    color: darkgray;
+  }
+  ${({ $index, $currentIndex }) =>
+    $index === $currentIndex && `color: darkgray;`}
 `;
 
 const RightArrow = styled.div`
@@ -83,6 +90,10 @@ const RightArrow = styled.div`
   font-size: 45px;
   zindex: 1;
   cursor: pointer;
+  &:hover,
+  &:focus {
+    color: darkgray;
+  }
 `;
 
 const LeftArrow = styled.div`
@@ -92,6 +103,16 @@ const LeftArrow = styled.div`
   font-size: 45px;
   zindex: 1;
   cursor: pointer;
+  &:hover,
+  &:focus {
+    color: darkgray;
+  }
+`;
+
+const SectionTitle = styled.h3`
+  display: block;
+  font-size: 1.8em;
+  font-weight: bold;
 `;
 
 const Carousel = () => {
@@ -99,29 +120,32 @@ const Carousel = () => {
   const parentWidth = 500;
   const slides = [
     {
-      url: "./image-1.jpg",
-      title: "beach",
-      altText: "beach",
+      // url: "./image-1.jpg",
+      title: "Testimonial 1",
+      altText: "Testimonial 1",
     },
     {
       url: "./image-2.jpg",
-      title: "boat",
-      altText: "boat",
+      title: "Testimonial 2",
+      altText: "Testimonial 2",
     },
     {
       url: "./image-3.jpg",
-      title: "forest",
-      altText: "forest",
+      title: "Testimonial 3",
+      altText: "Testimonial 3",
+      darkmode: true,
     },
     {
       url: "./image-4.jpg",
-      title: "city",
-      altText: "city",
+      title: "Testimonial 4",
+      altText: "Testimonial 4",
+      darkmode: true,
     },
     {
-      url: "./image-5.jpg",
-      title: "italy",
-      altText: "italy",
+      // url: "./image-5.jpg",
+      title: "Testimonial 5",
+      altText: "Testimonial 5",
+      darkmode: true,
     },
   ];
   const autoScroll = false;
@@ -157,7 +181,7 @@ const Carousel = () => {
     return (
       slides &&
       slides.map((slide, index) => {
-        const { title, url } = slide;
+        const { title, url, darkmode } = slide;
         return (
           <Card
             onClick={() => console.log("clicked on card", index)}
@@ -165,7 +189,7 @@ const Carousel = () => {
             $image={url}
           >
             <TextContainer>
-              <CardTitle>{`Card-${index}: ${title}`}</CardTitle>
+              <CardTitle $darkmode={darkmode}>{`${title}`}</CardTitle>
             </TextContainer>
           </Card>
         );
@@ -182,7 +206,7 @@ const Carousel = () => {
             key={`PaginationDot-${index}`}
             $index={index}
             $currentIndex={currentIndex}
-            onClick={() => console.log("clicked on index", index)}
+            onClick={() => goToSlide(index)}
           >
             ●
           </DotWrapper>
@@ -192,6 +216,8 @@ const Carousel = () => {
   };
   return (
     <Container>
+      <SectionTitle>Testimonials</SectionTitle>
+
       <CardsContainer $totalSlides={slides.length} $currentIndex={currentIndex}>
         {slides && _renderCards()}
       </CardsContainer>
