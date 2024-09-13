@@ -26,14 +26,13 @@ const CardsContainer = styled.div`
     flex-direction: column;
     align-items: center;
   }
+  padding: 0.5em 0;
 `;
-// ${({ $currentIndex }) => `transform: -${$currentIndex * 60}vw';`}
-// width: 300vw;
 
 const Card = styled.div`
   color: black;
   width: 80vw;
-  height: 300px;
+  min-height: 300px;
   border-radius: 10px;
   background-size: cover;
   background-position: center;
@@ -44,7 +43,7 @@ const Card = styled.div`
   }
   @media (max-width: 720px) {
     width: 75vw;
-    height: 250px;
+    min-height: 250px;
   }
 `;
 
@@ -53,7 +52,7 @@ const TextContainer = styled.div`
 `;
 const CardTitle = styled.h4`
   display: block;
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: bold;
   ${({ $darkmode }) => $darkmode && `color: white;`}
 `;
@@ -120,11 +119,12 @@ const Carousel = () => {
   const parentWidth = 500;
   const slides = [
     {
-      url: "./image-1.jpg",
+      url: "./image-4.jpg",
       title: "Testimonial 1",
       altText: "Testimonial 1",
       bodyText:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      darkmode: true,
     },
     {
       // url: "./image-2.jpg",
@@ -142,7 +142,7 @@ const Carousel = () => {
       darkmode: true,
     },
     {
-      url: "./image-4.jpg",
+      url: "./image-1.jpg",
       title: "Testimonial 4",
       altText: "Testimonial 4",
       bodyText:
