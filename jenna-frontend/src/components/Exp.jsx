@@ -12,6 +12,7 @@ const ExpContainer = styled.div`
   background-size: cover;
   display: flex;
   justify-content: space-between;
+  min-height: 600px;
 
   @media (max-width: 1080px) {
     flex-direction: column-reverse;
@@ -19,8 +20,8 @@ const ExpContainer = styled.div`
 `;
 
 const Overlay = styled.div`
-  background-color: #ffffff;
-  opacity: 0.6;
+  background-color: #dadce3;
+  opacity: 0.8;
 `;
 
 const ContentContainer = styled.div`
@@ -33,7 +34,7 @@ const Exp = (props) => {
       <Overlay>
         <ContentContainer>
           <SectionTitle>EXP Realty</SectionTitle>
-          <SectionSubHeading>Listings sub-heading</SectionSubHeading>
+          <SectionSubHeading>EXP Realty sub-heading</SectionSubHeading>
           <StyledHR />
           <StyledParagraph>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

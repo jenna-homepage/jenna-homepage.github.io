@@ -54,7 +54,7 @@ const CardTitle = styled.h4`
   display: block;
   font-size: 1.2em;
   font-weight: bold;
-  ${({ $darkmode }) => $darkmode && `color: white;`}
+  ${({ $darkmode }) => $darkmode && `color: #f1f1f1;`}
 `;
 
 const PaginationContainer = styled.div`

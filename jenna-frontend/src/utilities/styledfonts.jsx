@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const SectionTitle = styled.div`
-  color: #636363;
+  color: #3f3f3f;
   font-size: 1.9em;
   font-weight: 600;
   padding-top: 1em;
