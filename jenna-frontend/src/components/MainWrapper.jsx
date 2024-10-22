@@ -14,6 +14,7 @@ import Footer from "./Footer";
 
 const MainContainer = styled.div`
   position: relative;
+  font-family: WF Visual Sans Text, Arial, sans-serif;
 `;
 
 // background: url("./background.webp");

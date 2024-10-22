@@ -14,6 +14,8 @@ const BioContainer = styled.div`
   @media (max-width: 1080px) {
     flex-direction: column-reverse;
   }
+  border-radius: 10px;
+  outline: 1px solid #cfcfcf;
 `;
 
 const TextContainer = styled.div``;
