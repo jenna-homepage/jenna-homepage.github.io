@@ -14,6 +14,29 @@ import Footer from "./Footer";
 // const gaID = process.env.REACT_APP_REACTGA_KEY;
 // ReactGA.initialize(gaID ? gaID : "");
 
+const sectionsData = [
+  {
+    text: "About Me",
+    navTo: "ABOUTME",
+  },
+  {
+    text: "Services",
+    navTo: "SERVICES",
+  },
+  {
+    text: "Abnb",
+    navTo: "ABNB",
+  },
+  {
+    text: "Listings",
+    navTo: "LISTINGS",
+  },
+  {
+    text: "EXP Realty",
+    navTo: "EXPREALTY",
+  },
+];
+
 const MainContainer = styled.div`
   position: relative;
   font-family: WF Visual Sans Text, Arial, sans-serif;
@@ -61,29 +84,7 @@ const MainWrapper = () => {
   const [currentView, setCurrentView] = useState("ABOUTME");
   console.log("currentView", currentView);
 
-  const sectionsData = [
-    {
-      text: "About Me",
-      navTo: "ABOUTME",
-    },
-    {
-      text: "Services",
-      navTo: "SERVICES",
-    },
-    {
-      text: "Abnb",
-      navTo: "ABNB",
-    },
-    {
-      text: "Listings",
-      navTo: "LISTINGS",
-    },
-    {
-      text: "EXP Realty",
-      navTo: "EXPREALTY",
-    },
-  ];
-
+  // convert to react router
   const _renderView = () => {
     switch (currentView) {
       case "SERVICES":
