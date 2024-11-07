@@ -1,24 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 
-const headerData = [
-  {
-    text: "About Me",
-    navTo: "ABOUTME",
-  },
-  // {
-  //   text: "Testimonials",
-  //   navTo: "",
-  // },
-  {
-    text: "Listings",
-    navTo: "LISTINGS",
-  },
-  {
-    text: "EXP Realty",
-    navTo: "EXPREALTY",
-  },
-];
+// const headerData = [
+//   {
+//     text: "About Me",
+//     navTo: "ABOUTME",
+//   },
+//   {
+//     text: "Listings",
+//     navTo: "LISTINGS",
+//   },
+//   {
+//     text: "EXP Realty",
+//     navTo: "EXPREALTY",
+//   },
+// ];
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -95,11 +91,11 @@ const StyledButton = styled.button`
 `;
 
 const Header = (props) => {
-  const { updateView, currentView } = props;
+  const { updateView, currentView, sectionsData } = props;
   const _renderButtons = () => {
     return (
-      headerData &&
-      headerData.map((buttonData) => {
+      sectionsData &&
+      sectionsData.map((buttonData) => {
         const { text, navTo } = buttonData;
         return (
           <ButtonWrapper key={"headerButton" + text.replace(/ /g, "")}>
@@ -124,7 +120,7 @@ const Header = (props) => {
       </LeftHeaderContainer>
       <RightHeaderContainer>
         <RightLinkContainer>
-          {headerData && _renderButtons()}
+          {sectionsData && _renderButtons()}
         </RightLinkContainer>
       </RightHeaderContainer>
     </HeaderContainer>

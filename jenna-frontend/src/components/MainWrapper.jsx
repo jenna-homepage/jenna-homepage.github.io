@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Header from "./Header";
 import Bio from "./Bio";
+import Services from "./Services";
+import Abnb from "./Abnb";
 import Listings from "./Listings";
 import Exp from "./Exp";
 import Carousel from "./Carousel";
@@ -59,8 +61,37 @@ const MainWrapper = () => {
   const [currentView, setCurrentView] = useState("ABOUTME");
   console.log("currentView", currentView);
 
+  const sectionsData = [
+    {
+      text: "About Me",
+      navTo: "ABOUTME",
+    },
+    {
+      text: "Services",
+      navTo: "SERVICES",
+    },
+    {
+      text: "Abnb",
+      navTo: "ABNB",
+    },
+    {
+      text: "Listings",
+      navTo: "LISTINGS",
+    },
+    {
+      text: "EXP Realty",
+      navTo: "EXPREALTY",
+    },
+  ];
+
   const _renderView = () => {
     switch (currentView) {
+      case "SERVICES":
+        return <Services />;
+        break;
+      case "ABNB":
+        return <Abnb />;
+        break;
       case "LISTINGS":
         return <Listings />;
         break;
@@ -76,12 +107,13 @@ const MainWrapper = () => {
       <BackgroundLayer />
 
       <ContentContainer>
-        <Header currentView={currentView} updateView={setCurrentView} />
+        <Header
+          currentView={currentView}
+          updateView={setCurrentView}
+          sectionsData={sectionsData}
+        />
         <StyledLine />
-        <BodyWrapper>
-          {/* <Bio /> */}
-          {_renderView()}
-        </BodyWrapper>
+        <BodyWrapper>{_renderView()}</BodyWrapper>
         <StyledLine />
 
         <Carousel />
