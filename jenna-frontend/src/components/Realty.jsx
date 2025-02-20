@@ -7,12 +7,12 @@ import {
 } from "../utilities/styledfonts";
 import styled from "styled-components";
 
-const ExpContainer = styled.div`
+const RealtyContainer = styled.div`
   ${({ $image }) => $image && `background-image: url(${$image});`}
   background-size: cover;
   display: flex;
   justify-content: space-between;
-  min-height: 600px;
+  min-height: 300px;
 
   @media (max-width: 1080px) {
     flex-direction: column-reverse;
@@ -30,13 +30,13 @@ const ContentContainer = styled.div`
   padding: 10px 20px;
 `;
 
-const Exp = (props) => {
+const Realty = (props) => {
   return (
-    <ExpContainer $image={"./expbackground.webp"}>
+    <RealtyContainer $image={"./realtybackground.webp"}>
       <Overlay>
         <ContentContainer>
-          <SectionTitle>EXP Realty</SectionTitle>
-          <SectionSubHeading>EXP Realty sub-heading</SectionSubHeading>
+          <SectionTitle>Epique Realty</SectionTitle>
+          <SectionSubHeading>Epique Realty sub-heading</SectionSubHeading>
           <StyledHR />
           <StyledParagraph>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -56,8 +56,8 @@ const Exp = (props) => {
           </StyledParagraph>
         </ContentContainer>
       </Overlay>
-    </ExpContainer>
+    </RealtyContainer>
   );
 };
 
-export default Exp;
+export default Realty;

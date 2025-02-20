@@ -41,7 +41,7 @@ const Bio = () => {
       <TextContainer>
         <SectionTitle>About Jenna</SectionTitle>
         <SectionSubHeading>
-          Real estate agent with EXP Realty, LLC
+          Real estate agent with Epique Realty, LLC
         </SectionSubHeading>
         <StyledHR />
         <StyledParagraph>

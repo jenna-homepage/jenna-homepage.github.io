@@ -12,7 +12,7 @@ const ServicesContainer = styled.div`
   background-size: cover;
   display: flex;
   justify-content: space-between;
-  min-height: 600px;
+  min-height: 300px;
 
   @media (max-width: 1080px) {
     flex-direction: column-reverse;

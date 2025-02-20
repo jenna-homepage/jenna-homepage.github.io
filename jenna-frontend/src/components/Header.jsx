@@ -1,21 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-// const headerData = [
-//   {
-//     text: "About Me",
-//     navTo: "ABOUTME",
-//   },
-//   {
-//     text: "Listings",
-//     navTo: "LISTINGS",
-//   },
-//   {
-//     text: "EXP Realty",
-//     navTo: "EXPREALTY",
-//   },
-// ];
-
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
