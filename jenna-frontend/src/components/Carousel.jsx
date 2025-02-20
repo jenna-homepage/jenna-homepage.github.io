@@ -227,7 +227,7 @@ const Carousel = (props) => {
   };
   return (
     <Container>
-      <SectionHeading>Testimonials</SectionHeading>
+      <SectionHeading>{headerText && headerText}</SectionHeading>
 
       <CardsContainer $totalCards={cardData.length} $currentIndex={currentIndex}>
         {cardData && _renderCards()}

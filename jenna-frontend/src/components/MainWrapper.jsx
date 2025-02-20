@@ -81,6 +81,50 @@ const realSlides = {
     },
   ]
 };
+const abnbSlides = {
+  headerText: "Take a Look Around",
+  cardData: [
+    {
+      url: "./image-4.jpg",
+      title: "Abnb Pic 1",
+      altText: "Abnb Pic 1",
+      bodyText:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      darkmode: true,
+    },
+    {
+      // url: "./image-2.jpg",
+      title: "Abnb Pic 2",
+      altText: "Abnb Pic 2",
+      bodyText:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    },
+    {
+      url: "./image-3.jpg",
+      title: "Abnb Pic 3",
+      altText: "Abnb Pic 3",
+      bodyText:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      darkmode: true,
+    },
+    {
+      url: "./image-1.jpg",
+      title: "Abnb Pic 4",
+      altText: "Abnb Pic 4",
+      bodyText:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      darkmode: true,
+    },
+    {
+      // url: "./image-5.jpg",
+      title: "Abnb Pic 5",
+      altText: "Abnb Pic 5",
+      bodyText:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      darkmode: true,
+    },
+  ]
+};
 
 const MainContainer = styled.div`
   position: relative;
@@ -162,7 +206,7 @@ const MainWrapper = () => {
         <BodyWrapper>{_renderView()}</BodyWrapper>
         <StyledLine />
 
-        <Carousel carouselData={realSlides} />
+        <Carousel carouselData={currentView === "ABNB" ? abnbSlides : realSlides} />
         <Footer />
       </ContentContainer>
     </MainContainer>
