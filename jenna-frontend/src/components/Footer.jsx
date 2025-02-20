@@ -80,9 +80,9 @@ const Footer = () => {
     <LayoutWrapper>
       <TextContainer>
         <InfoBox>
-          <div>EMAIL: jenna@patmckennarealtors.com</div>
+          <div>EMAIL: jenna.merrill@gmail.com</div>
           <div>MOBILE: (267) 752-6563</div>
-          <div>ADDRESS: 63 E Main St, Evesham, NJ 08053</div>
+          <div>ADDRESS: ???? </div>
           <div>LICENSE #: 2322201</div>
         </InfoBox>
       </TextContainer>

@@ -20,21 +20,21 @@ const sectionsData = [
     navTo: "ABOUTME",
   },
   {
-    text: "Services",
+    text: "Financial Services",
     navTo: "SERVICES",
-  },
-  {
-    text: "Abnb",
-    navTo: "ABNB",
-  },
-  {
-    text: "Listings",
-    navTo: "LISTINGS",
   },
   {
     text: "Epique Realty",
     navTo: "REALTY",
   },
+  {
+    text: "Abnb",
+    navTo: "ABNB",
+  },
+  // {
+  //   text: "Listings",
+  //   navTo: "LISTINGS",
+  // },  
 ];
 
 const realSlides = {

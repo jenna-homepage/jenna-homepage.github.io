@@ -7,56 +7,87 @@ import {
 } from "../utilities/styledfonts";
 import styled from "styled-components";
 
+
+
+const ContentContainer = styled.div`
+  padding: 10px 20px;
+`;
+
+{/* <ServicesContainer $image={"./rprising.background.webp"}></ServicesContainer> */}
 const ServicesContainer = styled.div`
-  ${({ $image }) => $image && `background-image: url(${$image});`}
+${({ $image }) => $image && `background-image: url(${$image});`}
   background-size: cover;
   display: flex;
   justify-content: space-between;
-  min-height: 300px;
-
+  padding: 10px 20px;
   @media (max-width: 1080px) {
     flex-direction: column-reverse;
   }
   border-radius: 10px;
   outline: 1px solid #cfcfcf;
 `;
-
 const Overlay = styled.div`
-  background-color: #dadce3;
-  opacity: 0.8;
+border-radius: 10px;
+  background-color: rgba(218,220,227,0.8);
 `;
 
-const ContentContainer = styled.div`
-  padding: 10px 20px;
+const TextContainer = styled.div``;
+const ImageContainer = styled.div`
+  padding: 2em 0em 2em 2em;
+  min-width: 40%;
+  
+
+  @media (max-width: 1080px) {
+    min-width: auto;
+    padding: 1em;
+  }
 `;
 
-const Services = (props) => {
+const ProfileImage = styled.img`
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  background-color: white;
+`;
+
+const Services = () => {
   return (
-    <ServicesContainer $image={"./expbackground.webp"}>
-      <Overlay>
-        <ContentContainer>
-          <SectionTitle>Services</SectionTitle>
-          <SectionSubHeading>Services sub-heading</SectionSubHeading>
-          <StyledHR />
-          <StyledParagraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+    <Overlay>
+    <ServicesContainer>
+      <TextContainer>
+        <SectionTitle>Red Phoenix Rising</SectionTitle>
+        <SectionSubHeading>
+        Financial Services
+        </SectionSubHeading>
+        <div>
+        Jenna Merrill CEO & Founder
+        </div>
+        <StyledHR />
+        <StyledParagraph>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat. Duis aute irure dolor in
             reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
             pariatur.
-          </StyledParagraph>
-          <StyledParagraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        </StyledParagraph>
+        <StyledParagraph>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat. Duis aute irure dolor in
             reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
             pariatur.
-          </StyledParagraph>
-        </ContentContainer>
-      </Overlay>
+        </StyledParagraph>
+      </TextContainer>
+      <ImageContainer>
+        <ProfileImage
+          src="./rprising.background.webp"
+          alt="Red Phoenix Rising Logo"
+        />
+      </ImageContainer>
     </ServicesContainer>
+    </Overlay>
   );
 };
 

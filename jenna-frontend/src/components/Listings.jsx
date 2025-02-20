@@ -22,8 +22,8 @@ const ListingsContainer = styled.div`
 `;
 
 const Overlay = styled.div`
-  background-color: #dadce3;
-  opacity: 0.8;
+border-radius: 10px;
+  background-color: rgba(218,220,227,0.8);
 `;
 
 const ContentContainer = styled.div`
