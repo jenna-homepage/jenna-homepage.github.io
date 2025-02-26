@@ -14,11 +14,11 @@ const CardsContainer = styled.div`
   gap: 3em;
   transition: transform ease-out 0.3s;
   @media (min-width: 721px) {
-    ${({ $totalSlides }) => `width: ${$totalSlides * 60}vw;`}
+    ${({ $totalCards }) => `width: ${$totalCards * 60}vw;`}
     ${({ $currentIndex }) => `transform: translateX(-${$currentIndex * 60}vw);`}
   }
   @media (min-width: 1080px) {
-    ${({ $totalSlides }) => `width: ${$totalSlides * 50}vw;`}
+    ${({ $totalCards }) => `width: ${$totalCards * 50}vw;`}
     ${({ $currentIndex }) => `transform: translateX(-${$currentIndex * 50}vw);`}
   }
   @media (max-width: 720px) {
@@ -114,65 +114,65 @@ const BodyText = styled.p`
   ${({ $darkmode }) => $darkmode && `color: white;`}
 `;
 
-const Carousel = () => {
+const Carousel = (props) => {
   // temp props
   const parentWidth = 500;
-  const slides = [
-    {
-      url: "./image-4.jpg",
-      title: "Testimonial 1",
-      altText: "Testimonial 1",
-      bodyText:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      darkmode: true,
-    },
-    {
-      // url: "./image-2.jpg",
-      title: "Testimonial 2",
-      altText: "Testimonial 2",
-      bodyText:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    },
-    {
-      url: "./image-3.jpg",
-      title: "Testimonial 3",
-      altText: "Testimonial 3",
-      bodyText:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      darkmode: true,
-    },
-    {
-      url: "./image-1.jpg",
-      title: "Testimonial 4",
-      altText: "Testimonial 4",
-      bodyText:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      darkmode: true,
-    },
-    {
-      // url: "./image-5.jpg",
-      title: "Testimonial 5",
-      altText: "Testimonial 5",
-      bodyText:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      darkmode: true,
-    },
-  ];
+  const {headerText, cardData} = props.carouselData;
+  //   {
+  //     url: "./image-4.jpg",
+  //     title: "Testimonial 1",
+  //     altText: "Testimonial 1",
+  //     bodyText:
+  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  //     darkmode: true,
+  //   },
+  //   {
+  //     // url: "./image-2.jpg",
+  //     title: "Testimonial 2",
+  //     altText: "Testimonial 2",
+  //     bodyText:
+  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  //   },
+  //   {
+  //     url: "./image-3.jpg",
+  //     title: "Testimonial 3",
+  //     altText: "Testimonial 3",
+  //     bodyText:
+  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  //     darkmode: true,
+  //   },
+  //   {
+  //     url: "./image-1.jpg",
+  //     title: "Testimonial 4",
+  //     altText: "Testimonial 4",
+  //     bodyText:
+  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  //     darkmode: true,
+  //   },
+  //   {
+  //     // url: "./image-5.jpg",
+  //     title: "Testimonial 5",
+  //     altText: "Testimonial 5",
+  //     bodyText:
+  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  //     darkmode: true,
+  //   },
+  // ];
   const autoScroll = false;
   const timerRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const goToPrevious = () => {
-    const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    const isFirstCard = currentIndex === 0;
+    const newIndex = isFirstCard ? cardData.length - 1 : currentIndex - 1;
     setCurrentIndex(newIndex);
   };
   const goToNext = useCallback(() => {
-    const isLastSlide = currentIndex === slides.length - 1;
-    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    const isLastCard = currentIndex === cardData.length - 1;
+    const newIndex = isLastCard ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
-  }, [currentIndex, slides]);
-  const goToSlide = (slideIndex) => {
-    setCurrentIndex(slideIndex);
+  }, [currentIndex, cardData]);
+  const goToCard = (cardIndex) => {
+    setCurrentIndex(cardIndex);
   };
 
   useEffect(() => {
@@ -189,8 +189,8 @@ const Carousel = () => {
 
   const _renderCards = () => {
     return (
-      slides &&
-      slides.map((slide, index) => {
+      cardData &&
+      cardData.map((slide, index) => {
         const { title, url, darkmode, bodyText } = slide;
         return (
           <Card
@@ -210,14 +210,14 @@ const Carousel = () => {
 
   const _renderPagination = () => {
     return (
-      slides &&
-      slides.map((_, index) => {
+      cardData &&
+      cardData.map((_, index) => {
         return (
           <DotWrapper
             key={`PaginationDot-${index}`}
             $index={index}
             $currentIndex={currentIndex}
-            onClick={() => goToSlide(index)}
+            onClick={() => goToCard(index)}
           >
             ●
           </DotWrapper>
@@ -227,14 +227,14 @@ const Carousel = () => {
   };
   return (
     <Container>
-      <SectionHeading>Testimonials</SectionHeading>
+      <SectionHeading>{headerText && headerText}</SectionHeading>
 
-      <CardsContainer $totalSlides={slides.length} $currentIndex={currentIndex}>
-        {slides && _renderCards()}
+      <CardsContainer $totalCards={cardData.length} $currentIndex={currentIndex}>
+        {cardData && _renderCards()}
       </CardsContainer>
       <PaginationContainer>
         <LeftArrow onClick={() => goToPrevious()}>❰</LeftArrow>
-        <DotContainer>{slides && _renderPagination()}</DotContainer>
+        <DotContainer>{cardData && _renderPagination()}</DotContainer>
         <RightArrow onClick={() => goToNext()}>❱</RightArrow>
       </PaginationContainer>
     </Container>

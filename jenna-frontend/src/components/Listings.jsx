@@ -12,7 +12,7 @@ const ListingsContainer = styled.div`
   background-size: cover;
   display: flex;
   justify-content: space-between;
-  min-height: 600px;
+  min-height: 300px;
 
   @media (max-width: 1080px) {
     flex-direction: column-reverse;
@@ -22,8 +22,8 @@ const ListingsContainer = styled.div`
 `;
 
 const Overlay = styled.div`
-  background-color: #dadce3;
-  opacity: 0.8;
+border-radius: 10px;
+  background-color: rgba(218,220,227,0.8);
 `;
 
 const ContentContainer = styled.div`
