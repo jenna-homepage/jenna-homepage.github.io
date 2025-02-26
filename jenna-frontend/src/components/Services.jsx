@@ -64,21 +64,17 @@ const Services = () => {
         </div>
         <StyledHR />
         <StyledParagraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur.
+        Ready to own your future?  Ready to get into real estate investment with expert guidance? Get personalized mentorship from the comfort of your home.
         </StyledParagraph>
+        <SectionSubHeading>Our Approach</SectionSubHeading>
         <StyledParagraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur.
+        Whether you’re balancing a busy life, dreaming of financial freedom, or planning your next adventure - now is the time to start your journey. Join our community of ambitious women and learn how to buy your first property investment with the support of experienced mentors. Your path to financial independence begins here - Don’t miss out!
         </StyledParagraph>
+        <SectionSubHeading>Our Program</SectionSubHeading>
+        <StyledParagraph>
+        We offer a program allowing women to engage in our community in a way that works best for their lives and at this stage in their real estate journey.
+        </StyledParagraph>
+        <StyledParagraph><a href="https://www.redphoenixrising.net/">Click here to learn more.</a></StyledParagraph>
       </TextContainer>
       <ImageContainer>
         <ProfileImage
