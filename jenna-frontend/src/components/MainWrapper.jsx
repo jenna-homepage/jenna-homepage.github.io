@@ -20,7 +20,7 @@ const sectionsData = [
     navTo: "ABOUTME",
   },
   {
-    text: "Financial Services",
+    text: "Red Phoenix Rising",
     navTo: "SERVICES",
   },
   {
@@ -161,7 +161,6 @@ const BodyWrapper = styled.div`
     padding: 1em 2em 1em 1em;
   }
 `;
-// min-height: 600px;
 
 const StyledLine = styled.div`
   width: 100%;
