@@ -37,7 +37,7 @@ const Card = styled.div`
   background-size: cover;
   background-position: center;
   background-color: grey;
-  ${({ $image }) => $image && `background-image: url(${$image});`}
+  ${({ $bgImage }) => $bgImage && `background-image: url(${$bgImage});`}
   @media (min-width: 1080px) {
     width: 50vw;
   }
@@ -47,8 +47,15 @@ const Card = styled.div`
   }
 `;
 
-const TextContainer = styled.div`
+const ContentContainer = styled.div`
   margin: 1em;
+`;
+const LayoutContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  @media (max-width: 720px) {
+    flex-direction: column;
+  }
 `;
 const CardTitle = styled.h4`
   display: block;
@@ -113,6 +120,15 @@ const LeftArrow = styled.div`
 const BodyText = styled.p`
   ${({ $darkmode }) => $darkmode && `color: white;`}
 `;
+
+const CardImage = styled.img`
+  max-width: 45%;
+  padding-left: 1em;
+  height: auto;
+  @media (max-width: 720px) {
+    padding-left: 0px;
+  }
+  `;
 
 const Carousel = (props) => {
   // temp props
@@ -191,17 +207,21 @@ const Carousel = (props) => {
     return (
       cardData &&
       cardData.map((slide, index) => {
-        const { title, url, darkmode, bodyText } = slide;
+        const { title, url, darkmode, bodyText, altText, image } = slide;
         return (
           <Card
             onClick={() => console.log("clicked on card", index)}
             key={`Card-${index}`}
-            $image={url}
+            $bgImage={url}
           >
-            <TextContainer>
+            <ContentContainer>
               <CardTitle $darkmode={darkmode}>{`${title}`}</CardTitle>
-              <BodyText $darkmode={darkmode}>{bodyText}</BodyText>
-            </TextContainer>
+              <LayoutContainer>
+                {bodyText && <BodyText $darkmode={darkmode}>{bodyText}</BodyText>}
+                {image && altText && <CardImage src={image} alt={altText} />}
+
+              </LayoutContainer>
+            </ContentContainer>
           </Card>
         );
       })

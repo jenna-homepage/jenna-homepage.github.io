@@ -41,11 +41,12 @@ const realSlides = {
   headerText: "Testimonials",
   cardData: [
     {
-      url: "./image-4.jpg",
+      // url: "./image-4.jpg",
       title: "Testimonial 1",
       altText: "Testimonial 1",
       bodyText:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      image: "./jenna-customer-family1.jpg",
       darkmode: true,
     },
     {
@@ -54,21 +55,24 @@ const realSlides = {
       altText: "Testimonial 2",
       bodyText:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      image: "./jenna-customer-family2.jpg",
     },
     {
-      url: "./image-3.jpg",
+      // url: "./image-3.jpg",
       title: "Testimonial 3",
       altText: "Testimonial 3",
       bodyText:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      image: "./jenna-customer1.jpg",
       darkmode: true,
     },
     {
-      url: "./image-1.jpg",
+      // url: "./image-1.jpg",
       title: "Testimonial 4",
       altText: "Testimonial 4",
       bodyText:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      image: "./jenna-key.jpg",
       darkmode: true,
     },
     {
@@ -77,6 +81,7 @@ const realSlides = {
       altText: "Testimonial 5",
       bodyText:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      image: "./jenna-key2.jpg",
       darkmode: true,
     },
   ]
