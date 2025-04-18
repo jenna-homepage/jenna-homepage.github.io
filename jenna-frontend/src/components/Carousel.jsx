@@ -215,7 +215,7 @@ const Carousel = (props) => {
             $bgImage={url}
           >
             <ContentContainer>
-              <CardTitle $darkmode={darkmode}>{`${title}`}</CardTitle>
+              <CardTitle $darkmode={darkmode}>{title && `${title}`}</CardTitle>
               <LayoutContainer>
                 {bodyText && <BodyText $darkmode={darkmode}>{bodyText}</BodyText>}
                 {image && altText && <CardImage src={image} alt={altText} />}
@@ -247,7 +247,7 @@ const Carousel = (props) => {
   };
   return (
     <Container>
-      <SectionHeading>{headerText && headerText}</SectionHeading>
+      {headerText && <SectionHeading> {headerText}</SectionHeading>}
 
       <CardsContainer $totalCards={cardData.length} $currentIndex={currentIndex}>
         {cardData && _renderCards()}
